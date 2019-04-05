@@ -24,7 +24,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "MergeTestProject/lambda.js",
-        "code": "exports.handler = function(event, context, callback) {\n    \n    console.log(\"Added from the Sigma IDE and committed with message: commit #01\");\n    callback(null, {\"message\": \"Successfully executed\"});\n}",
+        "code": "let AWS = require('aws-sdk')\nconst ddb = new AWS.DynamoDB.DocumentClient();\n\nexports.handler = function (event, context, callback) {\n\n    let name = JSON.parse(event.body).name;\n\n    ddb.put({\n        TableName: 'MergeTestDB',\n        Item: { 'Name': name }\n    }).promise()\n        .then(putRecordData => {\n            let response = {\n                \"isBase64Encoded\": true,\n                \"statusCode\": 200,\n                \"headers\": {\n                    \"Access-Control-Allow-Origin\": \"*\",\n                    \"Access-Control-Allow-Methods\": \"*\",\n                    \"Access-Control-Allow-Headers\": \"*\",\n                    \"Access-Control-Expose-Headers\": \"*\"\n                },\n                \"body\": JSON.stringify({\n\t\t\t\t\t\"Code\": \"Success\",\n\t\t\t\t\t\"Message\": \"Name: \" + name + \" is successfully persisted in database.\",\n\t\t\t\t\t\"Data\": putRecordData\n\t\t\t\t}),\n            };\n\n            callback(null, response);\n        })\n        .catch(err => {\n            let response = {\n                \"statusCode\": err.statusCode,\n                \"headers\": {\n                    \"Access-Control-Allow-Origin\": \"*\",\n                    \"Content-Type\": \"application/json\"\n                },\n                \"body\": JSON.stringify({\n                    \"Code\": err.code,\n                    \"Message\": err.message\n                }),\n                \"isBase64Encoded\": false\n            };\n            callback(null, response);\n        });\n}",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -77,9 +77,7 @@
     "deletedFiles": [],
     "rootNode": "a58fa13a-c6db-4f2e-bdb9-20fc47b48e6a",
     "openFiles": [
-      "d2a40193-360d-4ab7-b251-f6a985eb18d4",
-      "3554bc50-2dcc-4b41-be2d-cd46921ddef9",
-      "e2ecef47-3ff7-4340-a468-a5df8b647a8d"
+      "d2a40193-360d-4ab7-b251-f6a985eb18d4"
     ],
     "currentFileId": "d2a40193-360d-4ab7-b251-f6a985eb18d4",
     "resources": {
@@ -101,6 +99,37 @@
           "stageName": "Prod",
           "mode": 0
         }
+      },
+      "ddbMergeTestDB": {
+        "name": "ddbMergeTestDB",
+        "type": "DynamoDB",
+        "config": {
+          "mode": 0,
+          "operation": "put",
+          "table": {
+            "arn": "",
+            "name": "MergeTestDB",
+            "partitionKey": "Name",
+            "partitionKeyType": "S",
+            "hasSortKey": false,
+            "sortKey": "",
+            "sortKeyType": "S",
+            "mode": 0
+          },
+          "parameters": {
+            "Key": {},
+            "Item": {
+              "Name": "@{name}"
+            },
+            "ExpressionAttributeValues": {}
+          },
+          "triggerParams": {},
+          "validator": {
+            "validatableFields": {},
+            "validity": true
+          },
+          "valid": true
+        }
       }
     },
     "customTemplate": {
@@ -118,7 +147,15 @@
       }
     ],
     "packageJSON": {
-      "dependencies": {}
+      "dependencies": {
+        "aws-sdk": {
+          "name": "aws-sdk",
+          "language": "javascript",
+          "version": "2.176.0",
+          "dev": true,
+          "notRemovable": false
+        }
+      }
     }
   },
   "PROJECT_META": {
@@ -128,7 +165,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1554495871690
+    "lastSave": 1554497773658
   },
   "VCS_STATE": {
     "provider": "GitHub",
