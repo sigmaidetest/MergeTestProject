@@ -9,7 +9,6 @@
         "isDirectory": true,
         "children": [
           "d2a40193-360d-4ab7-b251-f6a985eb18d4",
-          "3554bc50-2dcc-4b41-be2d-cd46921ddef9",
           "f5fb55ef-7529-41bb-aa43-a46a4f87e14a"
         ],
         "isRemovable": false,
@@ -39,42 +38,21 @@
           }
         ]
       },
-      "3554bc50-2dcc-4b41-be2d-cd46921ddef9": {
-        "id": "3554bc50-2dcc-4b41-be2d-cd46921ddef9",
-        "parent": "a58fa13a-c6db-4f2e-bdb9-20fc47b48e6a",
-        "name": "test.xml",
-        "type": "XML_FILE",
-        "isDirectory": false,
-        "children": [],
-        "isRemovable": true,
-        "filePath": "MergeTestProject/test.xml",
-        "code": ""
-      },
       "f5fb55ef-7529-41bb-aa43-a46a4f87e14a": {
         "id": "f5fb55ef-7529-41bb-aa43-a46a4f87e14a",
         "parent": "a58fa13a-c6db-4f2e-bdb9-20fc47b48e6a",
         "name": "SubDir",
         "type": "DIRECTORY",
         "isDirectory": true,
-        "children": [
-          "e2ecef47-3ff7-4340-a468-a5df8b647a8d"
-        ],
-        "isRemovable": true,
-        "filePath": "MergeTestProject/SubDir"
-      },
-      "e2ecef47-3ff7-4340-a468-a5df8b647a8d": {
-        "id": "e2ecef47-3ff7-4340-a468-a5df8b647a8d",
-        "parent": "f5fb55ef-7529-41bb-aa43-a46a4f87e14a",
-        "name": "inner.json",
-        "type": "JSON_FILE",
-        "isDirectory": false,
         "children": [],
         "isRemovable": true,
-        "filePath": "MergeTestProject/SubDir/inner.json",
-        "code": "{\n    \"name\": \"Chamath\",\n    \"company\": \"AdroitLogic\"\n}"
+        "filePath": "MergeTestProject/SubDir"
       }
     },
-    "deletedFiles": [],
+    "deletedFiles": [
+      "MergeTestProject/test.xml",
+      "MergeTestProject/SubDir/inner.json"
+    ],
     "rootNode": "a58fa13a-c6db-4f2e-bdb9-20fc47b48e6a",
     "openFiles": [
       "d2a40193-360d-4ab7-b251-f6a985eb18d4"
@@ -165,7 +143,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1554497773658
+    "lastSave": 1554499381658
   },
   "VCS_STATE": {
     "provider": "GitHub",
