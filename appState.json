@@ -32,7 +32,12 @@
           "memory": 128,
           "layers": []
         },
-        "triggers": []
+        "triggers": [
+          {
+            "resourceName": "apigusEast1MergeTestAPItestany",
+            "config": {}
+          }
+        ]
       },
       "3554bc50-2dcc-4b41-be2d-cd46921ddef9": {
         "id": "3554bc50-2dcc-4b41-be2d-cd46921ddef9",
@@ -76,8 +81,28 @@
       "3554bc50-2dcc-4b41-be2d-cd46921ddef9",
       "e2ecef47-3ff7-4340-a468-a5df8b647a8d"
     ],
-    "currentFileId": "e2ecef47-3ff7-4340-a468-a5df8b647a8d",
-    "resources": {},
+    "currentFileId": "d2a40193-360d-4ab7-b251-f6a985eb18d4",
+    "resources": {
+      "apigusEast1MergeTestAPItestany": {
+        "name": "apigusEast1MergeTestAPItestany",
+        "type": "API_GATEWAY",
+        "config": {
+          "selectedRegion": "us-east-1",
+          "apiMode": 0,
+          "apiName": "MergeTestAPI",
+          "endpointType": "EDGE",
+          "resourceMode": 0,
+          "resourceName": "test",
+          "resourcePath": "/test",
+          "restMethod": "ANY",
+          "proxyIntegration": false,
+          "enableCORS": true,
+          "stageMode": 0,
+          "stageName": "Prod",
+          "mode": 0
+        }
+      }
+    },
     "customTemplate": {
       "dialect": null,
       "definitions": {}
@@ -103,7 +128,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1554495719373
+    "lastSave": 1554495871690
   },
   "VCS_STATE": {
     "provider": "GitHub",
