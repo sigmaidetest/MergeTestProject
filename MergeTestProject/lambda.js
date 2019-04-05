@@ -3,6 +3,7 @@ const ddb = new AWS.DynamoDB.DocumentClient();
 
 exports.handler = function (event, context, callback) {
 
+    console.log("***", event.body);
     let name = JSON.parse(event.body).name;
 
     ddb.put({
