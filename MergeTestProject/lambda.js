@@ -22,7 +22,7 @@ exports.handler = function (event, context, callback) {
                 },
                 "body": JSON.stringify({
 					"Code": "Success",
-					"Message": "Name: " + name + " is successfully persisted in database.",
+					"Message": "Name: " + name + " is successfully persisted in database!",
 					"Data": putRecordData
 				}),
             };
