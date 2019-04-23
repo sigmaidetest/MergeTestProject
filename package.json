@@ -1,7 +1,9 @@
 {
   "name": "MergeTestProject",
   "version": "1.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "smallest": "1.0.1"
+  },
   "devDependencies": {
     "aws-sdk": "2.176.0"
   }
