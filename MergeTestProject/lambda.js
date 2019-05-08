@@ -1,11 +1,21 @@
 let AWS = require('aws-sdk')
 const ddb = new AWS.DynamoDB.DocumentClient();
 
+const testData = require("subDir/test-data.json");
+
 exports.handler = function (event, context, callback) {
 
     console.log("***", event.body);
     let name = JSON.parse(event.body).name;
 
+    let dataName = testData.find(person => person.name === name);
+
+    if (dataName) {
+        putToDB(name);
+    }
+}
+
+const putToDB = name =>
     ddb.put({
         TableName: 'MergeTestDB',
         Item: { 'Name': name }
@@ -44,4 +54,3 @@ exports.handler = function (event, context, callback) {
             };
             callback(null, response);
         });
-}
