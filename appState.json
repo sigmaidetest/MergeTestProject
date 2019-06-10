@@ -23,7 +23,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "MergeTestProject/lambda.js",
-        "code": "let AWS = require('aws-sdk')\nconst ddb = new AWS.DynamoDB.DocumentClient();\n\nconst testData = require(\"subDir/test-data.json\");\n\nexports.handler = function (event, context, callback) {\n\n    console.log(\"***\", event.body);\n    let name = JSON.parse(event.body).name;\n\n    let dataName = testData.find(person => person.name === name);\n\n    if (dataName) {\n        putToDB(name);\n    }\n}\n\nconst putToDB = name =>\n    ddb.put({\n        TableName: 'MergeTestDB',\n        Item: { 'Name': name }\n    }).promise()\n        .then(putRecordData => {\n            let response = {\n                \"isBase64Encoded\": true,\n                \"statusCode\": 200,\n                \"headers\": {\n                    \"Access-Control-Allow-Origin\": \"*\",\n                    \"Access-Control-Allow-Methods\": \"*\",\n                    \"Access-Control-Allow-Headers\": \"*\",\n                    \"Access-Control-Expose-Headers\": \"*\"\n                },\n                \"body\": JSON.stringify({\n\t\t\t\t\t\"Code\": \"Success\",\n\t\t\t\t\t\"Message\": \"Name: \" + name + \" is successfully persisted in database...\",\n\t\t\t\t\t\"Data\": putRecordData\n\t\t\t\t}),\n            };\n\n            callback(null, response);\n        })\n        .catch(err => {\n            let response = {\n                \"statusCode\": err.statusCode,\n                \"headers\": {\n                    \"Access-Control-Allow-Origin\": \"*\",\n                    \"Content-Type\": \"application/json\"\n                },\n                \"body\": JSON.stringify({\n                    \"Code\": err.code,\n                    \"Message\": err.message\n                }),\n                \"isBase64Encoded\": false\n            };\n            callback(null, response);\n        });",
+        "code": "let AWS = require('aws-sdk')\nconst ddb = new AWS.DynamoDB.DocumentClient();\n\nconst testData = require(\"subDir/test-data.json\");\n\nexports.handler = function (event, context, callback) {\n\n    console.log(\"*\", event.body);\n    let name = JSON.parse(event.body).name;\n\n    let dataName = testData.find(person => person.name === name);\n\n    if (dataName) {\n        ddb.put({\n            TableName: 'MergeTestDB',\n            Item: { 'Name': name }\n        }).promise()\n            .then(putRecordData => {\n                let response = {\n                    \"isBase64Encoded\": true,\n                    \"statusCode\": 200,\n                    \"headers\": {\n                        \"Access-Control-Allow-Origin\": \"*\",\n                        \"Access-Control-Allow-Methods\": \"*\",\n                        \"Access-Control-Allow-Headers\": \"*\",\n                        \"Access-Control-Expose-Headers\": \"*\"\n                    },\n                    \"body\": JSON.stringify({\n                        \"Code\": \"Success\",\n                        \"Message\": \"Name: \" + name + \" is successfully persisted in database...\",\n                        \"Data\": putRecordData\n                    }),\n                };\n\n                callback(null, response);\n            })\n            .catch(err => {\n                let response = {\n                    \"statusCode\": err.statusCode,\n                    \"headers\": {\n                        \"Access-Control-Allow-Origin\": \"*\",\n                        \"Content-Type\": \"application/json\"\n                    },\n                    \"body\": JSON.stringify({\n                        \"Code\": err.code,\n                        \"Message\": err.message\n                    }),\n                    \"isBase64Encoded\": false\n                };\n                callback(null, response);\n            });\n    }\n}",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -88,7 +88,7 @@
       "d2a40193-360d-4ab7-b251-f6a985eb18d4",
       "1b1392e4-19b3-431d-89f1-a5b6378d704f"
     ],
-    "currentFileId": "1b1392e4-19b3-431d-89f1-a5b6378d704f",
+    "currentFileId": "d2a40193-360d-4ab7-b251-f6a985eb18d4",
     "resources": {
       "apigusEast1MergeTestAPItestany": {
         "name": "apigusEast1MergeTestAPItestany",
@@ -193,7 +193,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1560162447189
+    "lastSave": 1560162526908
   },
   "VCS_STATE": {
     "provider": "GitHub",
