@@ -90,25 +90,6 @@
     ],
     "currentFileId": "d2a40193-360d-4ab7-b251-f6a985eb18d4",
     "resources": {
-      "apigusEast1MergeTestAPItestany": {
-        "name": "apigusEast1MergeTestAPItestany",
-        "type": "API_GATEWAY",
-        "config": {
-          "selectedRegion": "us-east-1",
-          "apiMode": 0,
-          "apiName": "MergeTestAPI",
-          "endpointType": "EDGE",
-          "resourceMode": 0,
-          "resourceName": "test",
-          "resourcePath": "/test",
-          "restMethod": "ANY",
-          "proxyIntegration": true,
-          "enableCORS": true,
-          "stageMode": 0,
-          "stageName": "Prod",
-          "mode": 0
-        }
-      },
       "ddbMergeTestDB": {
         "name": "ddbMergeTestDB",
         "type": "DynamoDB",
@@ -193,7 +174,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1560162526908
+    "lastSave": 1560162597356
   },
   "VCS_STATE": {
     "provider": "GitHub",
