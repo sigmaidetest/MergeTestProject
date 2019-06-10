@@ -53,7 +53,8 @@
         "type": "DIRECTORY",
         "isDirectory": true,
         "children": [
-          "47fc2625-0491-4c8f-81cd-fe7cb277c9bb"
+          "47fc2625-0491-4c8f-81cd-fe7cb277c9bb",
+          "1b1392e4-19b3-431d-89f1-a5b6378d704f"
         ],
         "isRemovable": true,
         "filePath": "MergeTestProject/SubDir"
@@ -68,15 +69,26 @@
         "isRemovable": true,
         "filePath": "MergeTestProject/SubDir/test-data.json",
         "code": "[\n    {\n        \"id\": 0,\n        \"name\": \"Chamath\"\n    },\n    {\n        \"id\": 1,\n        \"name\": \"Udith\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Janaka\"\n    }\n]"
+      },
+      "1b1392e4-19b3-431d-89f1-a5b6378d704f": {
+        "id": "1b1392e4-19b3-431d-89f1-a5b6378d704f",
+        "parent": "f5fb55ef-7529-41bb-aa43-a46a4f87e14a",
+        "name": "test2.json.js",
+        "type": "JS_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "MergeTestProject/SubDir/test2.json.js",
+        "code": "{}"
       }
     },
     "deletedFiles": [],
     "rootNode": "a58fa13a-c6db-4f2e-bdb9-20fc47b48e6a",
     "openFiles": [
       "d2a40193-360d-4ab7-b251-f6a985eb18d4",
-      "47fc2625-0491-4c8f-81cd-fe7cb277c9bb"
+      "1b1392e4-19b3-431d-89f1-a5b6378d704f"
     ],
-    "currentFileId": "47fc2625-0491-4c8f-81cd-fe7cb277c9bb",
+    "currentFileId": "1b1392e4-19b3-431d-89f1-a5b6378d704f",
     "resources": {
       "apigusEast1MergeTestAPItestany": {
         "name": "apigusEast1MergeTestAPItestany",
@@ -181,7 +193,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1560160037403
+    "lastSave": 1560162447189
   },
   "VCS_STATE": {
     "provider": "GitHub",
