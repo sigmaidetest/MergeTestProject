@@ -5,7 +5,7 @@ const testData = require("subDir/test-data.json");
 
 exports.handler = function (event, context, callback) {
 
-    console.log("*", event.body);
+    console.log("***", event.body);
     let name = JSON.parse(event.body).name;
 
     let dataName = testData.find(person => person.name === name);
