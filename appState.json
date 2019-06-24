@@ -54,7 +54,8 @@
         "isDirectory": true,
         "children": [
           "47fc2625-0491-4c8f-81cd-fe7cb277c9bb",
-          "1b1392e4-19b3-431d-89f1-a5b6378d704f"
+          "1b1392e4-19b3-431d-89f1-a5b6378d704f",
+          "fb37a24f-7ae8-4440-b079-789c899facb0"
         ],
         "isRemovable": true,
         "filePath": "MergeTestProject/SubDir"
@@ -80,6 +81,17 @@
         "isRemovable": true,
         "filePath": "MergeTestProject/SubDir/test2.json.js",
         "code": "{\n    key: \"value\"\n}"
+      },
+      "fb37a24f-7ae8-4440-b079-789c899facb0": {
+        "id": "fb37a24f-7ae8-4440-b079-789c899facb0",
+        "parent": "f5fb55ef-7529-41bb-aa43-a46a4f87e14a",
+        "name": "styles.css",
+        "type": "CSS_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "MergeTestProject/SubDir/styles.css",
+        "code": ""
       }
     },
     "deletedFiles": [],
@@ -174,7 +186,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1561355375607
+    "lastSave": 1561359725664
   },
   "VCS_STATE": {
     "provider": "GitHub",
