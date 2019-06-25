@@ -97,10 +97,9 @@
     "deletedFiles": [],
     "rootNode": "a58fa13a-c6db-4f2e-bdb9-20fc47b48e6a",
     "openFiles": [
-      "d2a40193-360d-4ab7-b251-f6a985eb18d4",
-      "1b1392e4-19b3-431d-89f1-a5b6378d704f"
+      "d2a40193-360d-4ab7-b251-f6a985eb18d4"
     ],
-    "currentFileId": "1b1392e4-19b3-431d-89f1-a5b6378d704f",
+    "currentFileId": "d2a40193-360d-4ab7-b251-f6a985eb18d4",
     "resources": {
       "ddbMergeTestDB": {
         "name": "ddbMergeTestDB",
@@ -186,7 +185,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1561359725664
+    "lastSave": 1561451743358
   },
   "VCS_STATE": {
     "provider": "GitHub",
