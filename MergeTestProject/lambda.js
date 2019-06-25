@@ -5,13 +5,16 @@ const testData = require("subDir/test-data.json");
 
 exports.handler = function (event, context, callback) {
 
-    console.log("***", event.body);
+    console.log("Body:", event.body);
     let name = JSON.parse(event.body).name;
 
-    let dataName = testData.find(person => person.name === name);
+    if (testData.find(person => person.name === name)) {
+        putToDB(name, callback);
+    }
+}
 
-    if (dataName) {
-        ddb.put({
+const putToDB = (name, callback) =>
+    ddb.put({
             TableName: 'MergeTestDB',
             Item: { 'Name': name }
         }).promise()
@@ -49,5 +52,3 @@ exports.handler = function (event, context, callback) {
                 };
                 callback(null, response);
             });
-    }
-}
